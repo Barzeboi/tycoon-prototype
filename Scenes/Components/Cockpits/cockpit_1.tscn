@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://chj3bowtk81ob"]
+
+[ext_resource type="Script" uid="uid://bnuvoouirrre1" path="res://Scripts/Component/cockpit.gd" id="1_1ykfn"]
+[ext_resource type="Texture2D" uid="uid://0euy6osefg85" path="res://icon.svg" id="1_w7kma"]
+[ext_resource type="Script" uid="uid://d04ixccjuklo8" path="res://Scripts/Component/component_stats.gd" id="2_d4l3d"]
+[ext_resource type="Texture2D" uid="uid://ssdd5gsaavc4" path="res://Assets/Misc/marker.png" id="2_rjv6v"]
+[ext_resource type="Script" uid="uid://b3v08xmcrlf5r" path="res://Scripts/Misc/Attach.gd" id="2_yo706"]
+
+[sub_resource type="Resource" id="Resource_3fwmb"]
+script = ExtResource("2_d4l3d")
+tier = 1
+weight = 200
+quality_max = 30
+power = 200.0
+comfort = 10
+attack = 5.0
+defense = 5.0
+metadata/_custom_type_script = "uid://d04ixccjuklo8"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oao5w"]
+size = Vector2(110, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1knsf"]
+
+[node name="Cockpit_1" type="CharacterBody2D" unique_id=958766187]
+script = ExtResource("1_1ykfn")
+component_stats = SubResource("Resource_3fwmb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=103808921]
+shape = SubResource("RectangleShape2D_oao5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1559211300]
+texture = ExtResource("1_w7kma")
+
+[node name="PlacementArea" type="Area2D" parent="." unique_id=223775213]
+script = ExtResource("2_yo706")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementArea" unique_id=560956]
+position = Vector2(128, 0)
+shape = SubResource("RectangleShape2D_1knsf")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlacementArea/CollisionShape2D" unique_id=86799511]
+texture = ExtResource("2_rjv6v")
+
+[connection signal="mouse_entered" from="PlacementArea" to="PlacementArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PlacementArea" to="PlacementArea" method="_on_mouse_exited"]

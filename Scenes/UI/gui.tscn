@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d2qbi0ly8sspp"]
+
+[ext_resource type="Script" uid="uid://dqwchxt4p7uc3" path="res://Scripts/Rooms/main_gui.gd" id="1_81ldm"]
+[ext_resource type="PackedScene" uid="uid://b4se4xf0s45kt" path="res://Scenes/Rooms/vehicle_creation.tscn" id="1_q081c"]
+[ext_resource type="Script" uid="uid://chvv5gvlpiwvb" path="res://Scripts/Statistics/stats_calculation.gd" id="1_vqpta"]
+[ext_resource type="PackedScene" uid="uid://c1262msu2rd7e" path="res://Scenes/Rooms/main_room.tscn" id="2_c81kn"]
+[ext_resource type="Script" uid="uid://d4gpsa80nfpwh" path="res://Scripts/Statistics/stats_and_sales.gd" id="2_nxoro"]
+[ext_resource type="Script" uid="uid://c4xqty4kmk0it" path="res://Scripts/Statistics/sales_calculation.gd" id="6_c81kn"]
+
+[node name="GUI" type="CanvasLayer" unique_id=468165737]
+script = ExtResource("1_81ldm")
+
+[node name="MainRoom" parent="." unique_id=774721968 instance=ExtResource("2_c81kn")]
+
+[node name="VehicleCreation" parent="." unique_id=1388644538 instance=ExtResource("1_q081c")]
+visible = false
+
+[node name="stats_and_sales" type="Node" parent="." unique_id=1682658082]
+script = ExtResource("2_nxoro")
+
+[node name="stats_calculation" type="Node" parent="." unique_id=519855618]
+script = ExtResource("1_vqpta")
+
+[node name="sales_calculation" type="Node" parent="." unique_id=851751529]
+script = ExtResource("6_c81kn")

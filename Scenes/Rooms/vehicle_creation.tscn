@@ -1,0 +1,316 @@
+[gd_scene format=3 uid="uid://b4se4xf0s45kt"]
+
+[ext_resource type="Script" uid="uid://bukg11lear58v" path="res://Scripts/Rooms/vehicle_creation.gd" id="1_3fwmb"]
+[ext_resource type="PackedScene" uid="uid://b0k7x33fex35l" path="res://Scenes/Components/component_button.tscn" id="1_22a0h"]
+[ext_resource type="PackedScene" uid="uid://chj3bowtk81ob" path="res://Scenes/Components/Cockpits/cockpit_1.tscn" id="2_sggs1"]
+[ext_resource type="Script" uid="uid://dky44nlqktrb2" path="res://Scripts/Component/Component.gd" id="3_21n0o"]
+[ext_resource type="Texture2D" uid="uid://0euy6osefg85" path="res://icon.svg" id="4_7fu1q"]
+[ext_resource type="PackedScene" uid="uid://bu2vqaxb8bmuc" path="res://Scenes/Components/Cargo/cargo_1.tscn" id="5_6jamp"]
+[ext_resource type="PackedScene" uid="uid://d0uahxo8b3bhp" path="res://Scenes/Components/Fuel/fuel_1.tscn" id="6_3fwmb"]
+[ext_resource type="PackedScene" uid="uid://bie2f4hhsnxye" path="res://Scenes/Components/Rocket/rocket_1.tscn" id="7_ctd4o"]
+
+[sub_resource type="Resource" id="Resource_6jamp"]
+script = ExtResource("3_21n0o")
+name = "Cockpit 1"
+id = 1
+price = 5200
+visual = ExtResource("4_7fu1q")
+scene = ExtResource("2_sggs1")
+metadata/_custom_type_script = "uid://dky44nlqktrb2"
+
+[sub_resource type="Resource" id="Resource_vv26k"]
+script = ExtResource("3_21n0o")
+name = "Cargo 1"
+id = 2
+price = 2500
+visual = ExtResource("4_7fu1q")
+scene = ExtResource("5_6jamp")
+metadata/_custom_type_script = "uid://dky44nlqktrb2"
+
+[sub_resource type="Resource" id="Resource_7n3pl"]
+script = ExtResource("3_21n0o")
+name = "Fuel 1"
+id = 3
+price = 2800
+visual = ExtResource("4_7fu1q")
+scene = ExtResource("6_3fwmb")
+metadata/_custom_type_script = "uid://dky44nlqktrb2"
+
+[sub_resource type="Resource" id="Resource_r1exm"]
+script = ExtResource("3_21n0o")
+name = "Rocket 1"
+id = 4
+price = 6600
+visual = ExtResource("4_7fu1q")
+scene = ExtResource("7_ctd4o")
+metadata/_custom_type_script = "uid://dky44nlqktrb2"
+
+[node name="VehicleCreation" type="CanvasLayer" unique_id=1388644538]
+script = ExtResource("1_3fwmb")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=160011139]
+position = Vector2(113, 214)
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=405420277]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -257.0
+grow_horizontal = 2
+grow_vertical = 0
+current_tab = 0
+
+[node name="Cockpit" type="TabBar" parent="TabContainer" unique_id=2133193847]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Cockpit" unique_id=1066110310]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cockpit_1" parent="TabContainer/Cockpit/HBoxContainer" unique_id=360886209 instance=ExtResource("1_22a0h")]
+layout_mode = 2
+size_flags_vertical = 4
+component = SubResource("Resource_6jamp")
+
+[node name="Cargo" type="TabBar" parent="TabContainer" unique_id=841493196]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Cargo" unique_id=1059521795]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="cargo_1" parent="TabContainer/Cargo/HBoxContainer" unique_id=1597687507 instance=ExtResource("1_22a0h")]
+layout_mode = 2
+size_flags_horizontal = 0
+component = SubResource("Resource_vv26k")
+
+[node name="Fuel" type="TabBar" parent="TabContainer" unique_id=1207165457]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Fuel" unique_id=232958860]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="fuel_1" parent="TabContainer/Fuel/HBoxContainer" unique_id=1090125087 instance=ExtResource("1_22a0h")]
+layout_mode = 2
+size_flags_horizontal = 0
+component = SubResource("Resource_7n3pl")
+
+[node name="Rocket" type="TabBar" parent="TabContainer" unique_id=492099181]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Rocket" unique_id=1563923199]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="rocket_1" parent="TabContainer/Rocket/HBoxContainer" unique_id=1803037685 instance=ExtResource("1_22a0h")]
+layout_mode = 2
+size_flags_horizontal = 0
+component = SubResource("Resource_r1exm")
+
+[node name="ToMarketButton" type="Button" parent="." unique_id=1339105066]
+offset_left = 886.0
+offset_top = 312.0
+offset_right = 1049.0
+offset_bottom = 393.0
+text = "Done"
+
+[node name="StatsDisplay" type="Panel" parent="." unique_id=1155448439]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -310.0
+offset_bottom = 280.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StatsDisplay" unique_id=1714639432]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 158.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsDisplay/HBoxContainer" unique_id=815235162]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Weight" type="Label" parent="StatsDisplay/HBoxContainer/VBoxContainer" unique_id=746797470]
+layout_mode = 2
+text = "Weight"
+
+[node name="W_PB" type="ProgressBar" parent="StatsDisplay/HBoxContainer/VBoxContainer/Weight" unique_id=1049505320]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 158.0
+offset_bottom = 31.0
+show_percentage = false
+
+[node name="LoadCap" type="Label" parent="StatsDisplay/HBoxContainer/VBoxContainer" unique_id=1719080989]
+layout_mode = 2
+text = "Load Capacity"
+
+[node name="LC_PB" type="ProgressBar" parent="StatsDisplay/HBoxContainer/VBoxContainer/LoadCap" unique_id=1090712849]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 158.0
+offset_bottom = 31.0
+show_percentage = false
+
+[node name="Hyperfuel" type="Label" parent="StatsDisplay/HBoxContainer/VBoxContainer" unique_id=1510693627]
+layout_mode = 2
+text = "Fuel"
+
+[node name="HF_PB" type="ProgressBar" parent="StatsDisplay/HBoxContainer/VBoxContainer/Hyperfuel" unique_id=265352093]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 158.0
+offset_bottom = 31.0
+show_percentage = false
+
+[node name="Speed" type="Label" parent="StatsDisplay/HBoxContainer/VBoxContainer" unique_id=1292307979]
+layout_mode = 2
+text = "Speed"
+
+[node name="S_PB" type="ProgressBar" parent="StatsDisplay/HBoxContainer/VBoxContainer/Speed" unique_id=1611624281]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 158.0
+offset_bottom = 31.0
+show_percentage = false
+
+[node name="Power" type="Label" parent="StatsDisplay/HBoxContainer/VBoxContainer" unique_id=1064686893]
+layout_mode = 2
+text = "Power"
+
+[node name="PO_PB" type="ProgressBar" parent="StatsDisplay/HBoxContainer/VBoxContainer/Power" unique_id=1760128857]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 158.0
+offset_bottom = 31.0
+show_percentage = false
+
+[node name="Maneuver" type="Label" parent="StatsDisplay/HBoxContainer/VBoxContainer" unique_id=2034019932]
+layout_mode = 2
+text = "Maneuver"
+
+[node name="M_PB" type="ProgressBar" parent="StatsDisplay/HBoxContainer/VBoxContainer/Maneuver" unique_id=1887945812]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 158.0
+offset_bottom = 31.0
+show_percentage = false
+
+[node name="Efficiency" type="Label" parent="StatsDisplay/HBoxContainer/VBoxContainer" unique_id=74887248]
+layout_mode = 2
+text = "Efficiency"
+
+[node name="E_PB" type="ProgressBar" parent="StatsDisplay/HBoxContainer/VBoxContainer/Efficiency" unique_id=946526768]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 158.0
+offset_bottom = 31.0
+show_percentage = false
+
+[node name="Comfort" type="Label" parent="StatsDisplay/HBoxContainer/VBoxContainer" unique_id=1691088749]
+layout_mode = 2
+text = "Comfort"
+
+[node name="C_PB" type="ProgressBar" parent="StatsDisplay/HBoxContainer/VBoxContainer/Comfort" unique_id=1735332876]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 158.0
+offset_bottom = 31.0
+show_percentage = false
+
+[node name="Confirmation" type="Panel" parent="." unique_id=218859457]
+visible = false
+anchors_preset = -1
+anchor_left = 0.069000006
+anchor_top = 0.074
+anchor_right = 0.59300005
+anchor_bottom = 0.648
+offset_left = -0.4880066
+offset_top = 0.048000336
+offset_right = -0.13604736
+offset_bottom = 0.0960083
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="Confirmation" unique_id=2130840758]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 101.0
+offset_right = 242.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 40
+text = "Name:"
+
+[node name="NameLine" type="LineEdit" parent="Confirmation/Name" unique_id=248085127]
+layout_mode = 0
+offset_left = 143.0
+offset_top = -4.0
+offset_right = 423.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Enter a Name"
+
+[node name="Price" type="Label" parent="Confirmation" unique_id=1521056378]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 176.0
+offset_right = 257.0
+offset_bottom = 231.0
+theme_override_font_sizes/font_size = 40
+text = "Price:"
+
+[node name="PriceLine" type="LineEdit" parent="Confirmation/Price" unique_id=272639407]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 1.0
+offset_right = 389.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Enter a Price"
+
+[node name="DoneButton" type="Button" parent="Confirmation" unique_id=572634733]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 278.0
+offset_right = 349.0
+offset_bottom = 341.0
+theme_override_font_sizes/font_size = 40
+text = "Done"
+
+[connection signal="pressed" from="ToMarketButton" to="." method="_on_to_market_button_pressed"]
+[connection signal="pressed" from="Confirmation/DoneButton" to="." method="_on_done_button_pressed"]
