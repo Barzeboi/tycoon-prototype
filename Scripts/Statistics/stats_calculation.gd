@@ -3,7 +3,7 @@ extends StatsandSales
 func _ready() -> void:
 	event_call.stats_call.connect(_stats_addition)
 
-func _stats_addition(stats:ComponentStats):
+func _stats_addition(stats:ComponentStats) -> void:
 	print("stats!")
 	print(stats.weight)
 	base_weight += stats.weight
@@ -46,5 +46,7 @@ func _stats_modifiers():
 	
 	print("speed: " + str(speed))
 	print(str(accum_efficiency) + "/" + str(eff_count))
+	
+	return [weight, accum_quality, attack, comfort, defense, hyper_fuel, load_capacity, maneuverability, power, shielding, speed, thrust]
 	
 	_stats_send()

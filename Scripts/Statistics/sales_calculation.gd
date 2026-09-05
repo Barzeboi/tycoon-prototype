@@ -3,6 +3,9 @@ extends StatsandSales
 
 var sales_array: Array = []
 
+func _ready() -> void:
+	event_call.sales_entry.connect(_sales_calculations)
+
 func _get_buyer_demographics():
 	match preferred_demographic:
 		BuyerDemographics.TRANSPORTERS:
@@ -94,7 +97,7 @@ func _get_buyer_demographics():
 			shield_importance = 100
 			fuel_importance = 90
 			
-func _sales_calculations(stats) -> void:
+func _sales_calculations() -> void:
 	sales_score += (weight * (1+ weight_importance))
 	sales_score += (attack * (1+ attack_importance))
 	sales_score += (defense * (1 + defense_importance))
@@ -106,7 +109,9 @@ func _sales_calculations(stats) -> void:
 	sales_score += (hyper_fuel * (1 + fuel_importance))
 	
 	sales_score *= price * .25
+	print("sales_score: " + str(sales_score))
 	print("sales!")
+	print(weight)
 
 func _demographic_changed() -> void:
 	_get_buyer_demographics()

@@ -106,7 +106,7 @@ func _set_display_max(stats:StatsandSales) -> void:
 func _on_to_market_button_pressed() -> void:
 	$Confirmation.show()
 	$TabContainer.hide()
-	event_call.sales_entry.emit(StatsandSales)
+	event_call.sales_entry.emit()
 	
 
 

@@ -48,14 +48,14 @@ var accum_maneuverability: float
 var thrust: float
 var speed: float
 var maneuverability: float
-var load_capacity: int
+var load_capacity: float
 var transport_speed: float = 0.0
 var accum_comfort: float
 var comfort: float
 var attack: float
 var defense: float
 var shielding: float
-var hyper_fuel: int
+var hyper_fuel: float
 
 var weight_max: float = 100000.0
 var quality_max: float = 100.0
