@@ -5,7 +5,6 @@ func _ready() -> void:
 
 func _stats_addition(stats:ComponentStats) -> void:
 	print("stats!")
-	print(stats.weight)
 	base_weight += stats.weight
 	accum_quality += stats.quality_max
 	accum_efficiency += stats.efficiency
@@ -47,6 +46,5 @@ func _stats_modifiers():
 	print("speed: " + str(speed))
 	print(str(accum_efficiency) + "/" + str(eff_count))
 	
-	return [weight, accum_quality, attack, comfort, defense, hyper_fuel, load_capacity, maneuverability, power, shielding, speed, thrust]
 	
 	_stats_send()

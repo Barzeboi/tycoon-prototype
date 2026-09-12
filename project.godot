@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 event_call="*uid://c8q05fj0g54ee"
 WorldState="*uid://c0850n5kjam51"
+GlobalStatistics="*uid://drmv3yrhi0w54"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg")
 
 [physics]
 

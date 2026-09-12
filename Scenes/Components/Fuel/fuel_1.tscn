@@ -12,6 +12,7 @@ tier = 1
 weight = 350
 quality_max = 30
 hyper_fuel = 1
+modulater = Color(0, 0.6745098, 0, 1)
 metadata/_custom_type_script = "uid://d04ixccjuklo8"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0pjk"]

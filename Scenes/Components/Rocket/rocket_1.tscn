@@ -14,6 +14,7 @@ quality_max = 30
 efficiency = 30.0
 maneuverability = 45.0
 thrust = 15780.0
+modulater = Color(0.7921569, 0, 0, 1)
 metadata/_custom_type_script = "uid://d04ixccjuklo8"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0pjk"]

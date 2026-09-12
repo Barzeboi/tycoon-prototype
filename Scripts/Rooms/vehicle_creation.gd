@@ -42,7 +42,6 @@ func _component_button_pressed(component:Component) -> void:
 			current_component = components[i]
 			component_instance = component.scene
 			component_cost = component.price
-			print(component_instance)
 			_create_placement_visualizer(component.visual)
 		else:
 			print(str(components[i]) + ": false")
@@ -80,6 +79,7 @@ func _place_component(comp_inst: PackedScene, plce: bool, comp_position: Vector2
 		add_child(place)
 		print("place")
 		is_placeable = false
+		
 
 
 func _stats_display(stats:StatsandSales) -> void:
@@ -91,6 +91,7 @@ func _stats_display(stats:StatsandSales) -> void:
 	m_pb.value = stats.maneuverability
 	e_pb.value = stats.efficiency
 	c_pb.value = stats.comfort
+	
 
 func _set_display_max(stats:StatsandSales) -> void:
 	w_pb.max_value = stats.weight_max
@@ -106,9 +107,14 @@ func _set_display_max(stats:StatsandSales) -> void:
 func _on_to_market_button_pressed() -> void:
 	$Confirmation.show()
 	$TabContainer.hide()
-	event_call.sales_entry.emit()
+
 	
 
 
 func _on_done_button_pressed() -> void:
-	pass # Replace with function body.
+	var ship = $Confirmation/Name/NameLine.text
+	var price = int($Confirmation/Price/PriceLine.text)
+	event_call.sales_entry.emit(price)
+	await get_tree().create_timer(0.1)
+	event_call.data_entry.emit(ship, price)
+	print("done")

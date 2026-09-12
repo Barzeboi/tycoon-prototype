@@ -5,6 +5,9 @@ var sales_array: Array = []
 
 func _ready() -> void:
 	event_call.sales_entry.connect(_sales_calculations)
+	_get_buyer_demographics()
+	print(weight_importance)
+	print(sales_score)
 
 func _get_buyer_demographics():
 	match preferred_demographic:
@@ -97,9 +100,15 @@ func _get_buyer_demographics():
 			shield_importance = 100
 			fuel_importance = 90
 			
-func _sales_calculations() -> void:
-	sales_score += (weight * (1+ weight_importance))
-	sales_score += (attack * (1+ attack_importance))
+func _price_changed(price:float) -> float:
+	return price
+			
+func _sales_calculations(price: float) -> void:
+	var difference:float
+	print("sales_score: " + str(sales_score))
+	sales_score = 0.0
+	sales_score += (weight * (1 + weight_importance))
+	sales_score += (attack * (1 + attack_importance))
 	sales_score += (defense * (1 + defense_importance))
 	sales_score += (maneuverability * (1 + maneuverability_importance))
 	sales_score += (load_capacity * (1 + load_cap_importance))
@@ -108,10 +117,16 @@ func _sales_calculations() -> void:
 	sales_score += (shielding * (1 + shield_importance))
 	sales_score += (hyper_fuel * (1 + fuel_importance))
 	
-	sales_score *= price * .25
+	#sales_score *= price * .25
+	difference = price - expected_price
+	if price > expected_price or price < expected_price:
+		sales_score += (difference * 0.25)
+	elif price < 0:
+		sales_score = 0
 	print("sales_score: " + str(sales_score))
 	print("sales!")
-	print(weight)
+	
+	
 
 func _demographic_changed() -> void:
 	_get_buyer_demographics()

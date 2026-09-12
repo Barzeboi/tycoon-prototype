@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1262msu2rd7e" path="res://Scenes/Rooms/main_room.tscn" id="2_c81kn"]
 [ext_resource type="Script" uid="uid://d4gpsa80nfpwh" path="res://Scripts/Statistics/stats_and_sales.gd" id="2_nxoro"]
 [ext_resource type="Script" uid="uid://c4xqty4kmk0it" path="res://Scripts/Statistics/sales_calculation.gd" id="6_c81kn"]
+[ext_resource type="Script" uid="uid://cfuy5hc2fmndv" path="res://Scripts/Statistics/statistics.gd" id="7_uw2l3"]
 
 [node name="GUI" type="CanvasLayer" unique_id=468165737]
 script = ExtResource("1_81ldm")
@@ -23,3 +24,6 @@ script = ExtResource("1_vqpta")
 
 [node name="sales_calculation" type="Node" parent="." unique_id=851751529]
 script = ExtResource("6_c81kn")
+
+[node name="statistics" type="Node" parent="." unique_id=809438994]
+script = ExtResource("7_uw2l3")

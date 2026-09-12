@@ -11,6 +11,7 @@ script = ExtResource("2_cgid7")
 tier = 1
 weight = 500
 load_capacity = 50
+modulater = Color(0, 0.5568628, 0.5882353, 1)
 metadata/_custom_type_script = "uid://d04ixccjuklo8"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0pjk"]
