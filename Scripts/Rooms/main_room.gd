@@ -8,6 +8,7 @@ var current_time_string = "%s/%s"
 
 func _ready() -> void:
 	WorldState.tick.connect(_tick)
+	event_call.rank_entry.connect(_rank_entry)
 	
 func _process(delta: float) -> void:
 	pass
@@ -17,6 +18,10 @@ func _physics_process(delta: float) -> void:
 
 func _tick() -> void:
 	date.text = current_time_string % ["%0*d" % [2, WorldState.month], WorldState.year]
+	
+func _rank_entry() -> void:
+	$"PanelContainer/VBoxContainer/1/Name".text = GlobalStatistics.market_array[0][0]
+	$"PanelContainer/VBoxContainer/1/Score".text = str(GlobalStatistics.market_array[0][2])
 
 func _on_pause_button_pressed() -> void:
 	WorldState.time_speed = 0

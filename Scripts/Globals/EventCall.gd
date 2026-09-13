@@ -9,3 +9,5 @@ signal stats_send(stats)
 signal sales_entry(stats)
 signal price_changed(price)
 signal data_entry(name, score)
+signal destroy
+signal rank_entry

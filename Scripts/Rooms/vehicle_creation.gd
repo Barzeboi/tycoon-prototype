@@ -25,6 +25,7 @@ func _ready() -> void:
 	event_call.placement.connect(_place_component)
 	event_call.stats_send.connect(_stats_display)
 	event_call.stats_send.connect(_set_display_max)
+	
 	cockpit_marker = $Marker2D.position
 
 
@@ -112,9 +113,13 @@ func _on_to_market_button_pressed() -> void:
 
 
 func _on_done_button_pressed() -> void:
+	$Confirmation.hide()
+	$TabContainer.show()
 	var ship = $Confirmation/Name/NameLine.text
 	var price = int($Confirmation/Price/PriceLine.text)
 	event_call.sales_entry.emit(price)
-	await get_tree().create_timer(0.1)
 	event_call.data_entry.emit(ship, price)
+	event_call.destroy.emit()
+	await get_tree().create_timer(.25)
+	owner._close_build_menu()
 	print("done")

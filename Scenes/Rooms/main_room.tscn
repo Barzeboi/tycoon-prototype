@@ -130,7 +130,6 @@ text = "2."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/2" unique_id=128688164]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/2" unique_id=1594010346]
 layout_mode = 2
@@ -150,7 +149,6 @@ text = "3."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/3" unique_id=472325102]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/3" unique_id=471809513]
 layout_mode = 2
@@ -170,7 +168,6 @@ text = "4."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/4" unique_id=63025235]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/4" unique_id=2128570705]
 layout_mode = 2
@@ -190,7 +187,6 @@ text = "5."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/5" unique_id=351982128]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/5" unique_id=1721893312]
 layout_mode = 2
@@ -210,7 +206,6 @@ text = "6."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/6" unique_id=128355552]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/6" unique_id=1764218542]
 layout_mode = 2
@@ -230,7 +225,6 @@ text = "7."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/7" unique_id=1686955746]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/7" unique_id=1436786970]
 layout_mode = 2
@@ -250,7 +244,6 @@ text = "8."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/8" unique_id=1197345130]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/8" unique_id=735268074]
 layout_mode = 2
@@ -270,7 +263,6 @@ text = "9."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/9" unique_id=1492254750]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/9" unique_id=1337584576]
 layout_mode = 2
@@ -290,7 +282,6 @@ text = "10."
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/10" unique_id=200097149]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Name"
 
 [node name="Score" type="Label" parent="PanelContainer/VBoxContainer/10" unique_id=1743613383]
 layout_mode = 2
